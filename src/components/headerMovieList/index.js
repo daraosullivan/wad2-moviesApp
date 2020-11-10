@@ -14,3 +14,4 @@ const Header = ({ title, numMovies }) => {
 };
 
 export default Header;
+
