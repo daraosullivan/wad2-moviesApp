@@ -3,7 +3,7 @@ import MovieListPageTemplate from "../components/templateMovieListPage";
 import AddReviewButton from '../components/buttons/addReview'
 import PageTemplate from '../components/templateMovieListPage'
 import {MoviesContext} from '../contexts/moviesContext'
-import AddToFavoritesButton from '../components/buttons/addToFavorites'
+import WatchListButton from '../components/buttons/addToWatchList'
 
 const UpcomingMoviesPage = () => {
     const context = useContext(MoviesContext);
@@ -16,7 +16,7 @@ const UpcomingMoviesPage = () => {
         title="No. Movies"
         movies={upcomingMovies}  /* Changed */
         action={(movie) => {
-          return <AddToFavoritesButton movie={movie} />;
+          return <WatchListButton movie={movie} />;
         }}
       />
     );
