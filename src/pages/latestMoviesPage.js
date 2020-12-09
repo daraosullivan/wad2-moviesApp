@@ -1,19 +1,21 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import PageTemplate from '../components/templateMovieListPage'
 import {MoviesContext} from '../contexts/moviesContext'
-
+import WatchListButton from '../components/buttons/addToWatchList'
 
 const LatestMoviesPage = () => {
   const context = useContext(MoviesContext);
-  const movies = context.movies.filter((m) => {  // New
-    return !("favorite" in m);
-  });
-  return (
-    <PageTemplate
-      title="No. Movies"
-      movies={movies}  /* Changed */
-     
-    />
-  );
+  console.log("Context"+ context.movies.toString())
+  const latestMovies = context.latest 
+    return (
+      <PageTemplate
+        title="No. Movies"
+        movies={latestMovies} 
+        action={(latest) => {
+          return <WatchListButton movie={latest} />;
+        }}
+      />
+    );
   };
-export default LatestMoviesPage;
+  
+  export default LatestMoviesPage;

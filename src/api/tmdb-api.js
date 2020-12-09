@@ -43,3 +43,14 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.results);
   };
+
+  export const getPopularMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+
+  
+  
