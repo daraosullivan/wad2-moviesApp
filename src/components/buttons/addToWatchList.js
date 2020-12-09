@@ -1,20 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 
 const WatchListButton = ({ movie }) => {
   return (
-    <Link
-      className="btn w-100 btn-primary "
-      to={{
-        pathname: `/reviews/form`,
-        state: {
-          movie: movie
-        }
-      }}
-    >
-      Add to Watch List 
-    </Link>
+    <button
+    type="button"
+    className="btn w-100 btn-primary"
+  >
+    Add to Watch List
+  </button>
   );
 };
 
 export default WatchListButton;
+
