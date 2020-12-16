@@ -4,18 +4,17 @@ import {MoviesContext} from '../contexts/moviesContext'
 import WatchListButton from '../components/buttons/addToWatchList'
 
 const PopularMoviesPage = () => {
-  const context = useContext(MoviesContext);
-  console.log("Context"+ context.movies.toString())
-  const popularMovies = context.popular
+    const context = useContext(MoviesContext);
+    const popularMovies = context.popular  
     return (
       <PageTemplate
         title="No. Movies"
-        movies={popularMovies} 
+        movies={popularMovies}  /* Changed */
         action={(popular) => {
           return <WatchListButton movie={popular} />;
         }}
       />
     );
   };
-  
-  export default PopularMoviesPage;
+
+export default PopularMoviesPage;

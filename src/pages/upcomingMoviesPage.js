@@ -4,21 +4,17 @@ import {MoviesContext} from '../contexts/moviesContext'
 import WatchListButton from '../components/buttons/addToWatchList'
 
 const UpcomingMoviesPage = () => {
-  const context = useContext(MoviesContext);
-  console.log("Context"+ context.movies.toString())
- // const upcomingMovies = context.filter((m) => {  // New
-//    return !("watchList" in m);
-  const upcomingMovies = context.upcoming  //SR that may have been movies before
-  
+    const context = useContext(MoviesContext);
+    const upcomingMovies = context.upcoming  
     return (
       <PageTemplate
         title="No. Movies"
-        movies={upcomingMovies} 
+        movies={upcomingMovies}  /* Changed */
         action={(upcoming) => {
           return <WatchListButton movie={upcoming} />;
         }}
       />
     );
   };
-  
-  export default UpcomingMoviesPage;
+
+export default UpcomingMoviesPage;

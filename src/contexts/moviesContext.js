@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useReducer } from "react";
-import { getMovies } from "../api/tmdb-api";
+import { getMovies, getUpcomingMovies, getLatestMovies, getPopularMovies} from "../api/tmdb-api";
 
 export const MoviesContext = createContext(null);
 
@@ -36,13 +36,25 @@ const MoviesContextProvider = (props) => {
     getMovies().then((movies) => {
       dispatch({ type: "load", payload: { movies } });
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getUpcomingMovies().then((movies) => {
+      dispatch({ type: "load", payload: { movies } });
+    });
+    getLatestMovies().then((movies) => {
+      dispatch({ type: "load", payload: { movies } });
+    });
+    getPopularMovies().then((movies) => {
+      dispatch({ type: "load", payload: { movies } });
+    });
+    
   }, []);
 
   return (
     <MoviesContext.Provider
       value={{
         movies: state.movies,
+        upcoming: state.upcoming,
+        popular: state.popular,
+        latest: state.latest,
         favorites: state.favorites,
         addToFavorites: addToFavorites,
         addReview: addReview,
