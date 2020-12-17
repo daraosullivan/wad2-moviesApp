@@ -1,20 +1,18 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Dara O'Sullivan
 
 ## Features.
 
 ...... A bullet-point list of the ADDITIONAL user features you have implemented for the  Movies Fan app ......,
  
- + Feature 1 - .... a statement of its purpose/objective ..... 
- + Feature 2 - .......
- + Feature 3 = ......
- + etc
- + etc
+ + Feature 1 - An upcoming movies page to display upcoming movies. Has errors is not finding the movies
+ + Feature 2 - An latest movies page to display latest movies. Has errors is not finding the movies
+ + Feature 3 = An popular movies page to display popular movies. Has errors is not finding the movies
 
 ## Setup requirements (If required).
 
-...... A brief explanation of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
+None
 
 ## API Data Model.
 
@@ -22,25 +20,19 @@ Name: ... your name ...
 
 + https://api.themoviedb.org/3/movie/${id} - get detailed information on a specific movie. 
 + https://api.themoviedb.org/3/genre/movie/list - get a list of movie genres
-+ .......
++ https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&page=1 - popular movies
++ https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=release_date.desc&page=1 - latest movies 
++ https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=release_date.desc&page=1 - upcoming movies
 
 ## App Design.
 
 ### Component catalogue (If required).
 
-....... Insert a screenshot from the Storybook UI, hi-light stories relating to new/modified components you developed - see example screenshot below] .......
-
-![][stories]
+None
 
 ### UI Design.
 
-...... Insert screenshots of the new/modified views you have added to the Movies Fan app. Include a caption for each one clearly stating its purpose and any user interaction it supports ........
-
-![][movieDetail]
->Shows detailed information on a movie. Clicking the 'Show Reviews' button will display extracts from critic reviews.
-
-![][review]
->Shows the full text for a movie review. 
+None
 
 ## Routing.
 
@@ -48,22 +40,16 @@ Name: ... your name ...
 
 + /movies/favorites (protected) - displays the user's favorite movies selection.
 + /reviews/:id (public) - displays the full text of a movie review.
-+ etc.
-+ etc.
++ /movies/latest (public) - latest movies 
++ /movies/upcoming (public) - upcoming movies
++ /movies/popular (public) - popular movies
 
 ### Data hyperlinking.
 
-.... Use screenshots to illustrate where data hyperlinking is present in your views - include captions.
-
-![][cardLink]
-> Clicking a card causes the display of that movie's details.
-
-![][reviewLink]
->Clicking the 'Full Review' for a review extract will display the full text of the review
+None
 
 ## Independent learning (If relevant).
 
-. . . . . Briefly mention each technologies/techniques used in your project codebase that were not covered in the lectures/labs. Provide source code filename references to support your assertions and include reference material links (articles/blogs).
 
 ---------------------------------
 
