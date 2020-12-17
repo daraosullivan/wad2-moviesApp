@@ -51,8 +51,6 @@ None
 ## Independent learning (If relevant).
 
 
----------------------------------
-
 [model]: ./data.jpg
 [movieDetail]: ./public/movieDetail.png
 [review]: ./public/review.png
